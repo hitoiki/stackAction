@@ -55,9 +55,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Script\EffectableClass\Ef_DealDemo.cs" />
+     <Compile Include="Assets\Script\EffectableClass\Ef_demo.cs" />
+     <Compile Include="Assets\Script\EffectableClass\Effectable.cs" />
      <Compile Include="Assets\Script\MoveDemo.cs" />
      <Compile Include="Assets\Script\PlayerStatus.cs" />
+     <Compile Include="Assets\Script\StackCrass.cs" />
      <Compile Include="Assets\Script\TouchSenser.cs" />
+     <None Include="Assets\設計上の雑感.txt" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/lifik/OneDrive/ドキュメント/GitHub/StackActionAlpha/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStatus
-{
-   /*
-   プレイヤーの持つデータを考えていく
-   
-   
-   */
+{ 
+   int zanki;
+   int score;
+   //スタック、ともすれば属性、お金
 }
