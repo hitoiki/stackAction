@@ -9,10 +9,10 @@ public class TouchSenser : MonoBehaviour
     public bool stumpready;
 
     //　レイを伸ばして接地判定に用いる
-    private Transform rayPosition;
+    public Transform rayPosition;
 
     public float rayRange = 1.0f; 
-    public Transform demoHit;
+    private Transform demoHit;
     private float distanceFromTargetObj;
     public float raysize;
     private RaycastHit hit;

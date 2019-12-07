@@ -2,26 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Effectable : MonoBehaviour
+public abstract class Effectable
 {
     //主にステージのギミック、主人公、アイテムが保有するインスタンス
 
-    //受ける影響のインターフェースだけ今は書いていけばいいと思う
+    //受ける影響の抽象クラスだけ今は書いていけばいいと思う
     protected GameObject entity;
-    
-    public Effectable(GameObject gameObject){
+
+    public Effectable(GameObject gameObject)
+    {
         entity = gameObject;
     }
 
-    public GameObject Entity{
-        set {this.entity = value;}
-        get {return this.entity;}
-        }
+    public GameObject Entity
+    {
+        set { this.entity = value; }
+        get { return this.entity; }
+    }
 
-    interface IEffectPalette{
-       void Ef_AddForce(Vector3 vector3);
-       void Ef_StateWrite();
-       void Ef_Vanish();
-   }
+    public abstract void Ef_AddForce(Vector3 vector3);
+    public abstract void Ef_StateWrite();
+    public abstract void Ef_Vanish();
+
 
 }
