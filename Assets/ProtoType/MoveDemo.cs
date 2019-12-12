@@ -20,11 +20,11 @@ public class MoveDemo : MonoBehaviour
         direction = Vector3.zero;
          if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
         {
-            direction += Vector3.up;
+            //direction += Vector3.up;
         }
 
         if (Input.GetKey(KeyCode.S)){
-            direction += Vector3.up * (-1.0f);
+            //direction += Vector3.up * (-1.0f);
         }
 
         if (Input.GetKey(KeyCode.D))
@@ -39,8 +39,6 @@ public class MoveDemo : MonoBehaviour
     }
 
     void FixedUpdate(){
-        if(KeyVectorCheck() != Vector3.zero){
-        rb.velocity = KeyVectorCheck()*speed;
-        }
+        rb.velocity += KeyVectorCheck()*speed - Vector3.right*rb.velocity.x;
     }
 }

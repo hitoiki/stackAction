@@ -19,7 +19,7 @@ public class Ef_demo : Effectable
 
     public override void Ef_AddForce(Vector3 vector3)
     {
-        rb.AddForce(vector3);
+        Debug.Log("AddForce");
     }
     public override void Ef_StateWrite()
     {
@@ -27,6 +27,6 @@ public class Ef_demo : Effectable
     }
     public override void Ef_Vanish()
     {
-        //Destroy(entity);
+        Debug.Log("Vanish");
     }
 }

@@ -23,6 +23,14 @@ public abstract class Effectable
     public abstract void Ef_AddForce(Vector3 vector3);
     public abstract void Ef_StateWrite();
     public abstract void Ef_Vanish();
+/*
+    public class Adapter : MonoBehaviour
+    {
+        public GameObject interentity;
 
-
+        public void Ad_Set(){
+            
+        }
+    } 
+    */
 }

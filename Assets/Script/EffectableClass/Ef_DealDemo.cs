@@ -6,7 +6,8 @@ public class Ef_DealDemo : MonoBehaviour
 {
     public Rigidbody rigitbody;
     public GameObject gameObj;
-    Ef_demo effect_demo;
+    public Effectable effect_demo;
+
 
     void Awake(){
         effect_demo =new Ef_demo(gameObj,rigitbody);

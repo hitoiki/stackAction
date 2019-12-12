@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TouchSenser : MonoBehaviour
+public class TouchSenser : StacklySencer
 {
     //接触の状況を確認するメソッド
-    public bool stumpready;
+    
+    //これが接地しているかの真理値
 
     //　レイを伸ばして接地判定に用いる
     public Transform rayPosition;
-
     public float rayRange = 1.0f; 
     private Transform demoHit;
     private float distanceFromTargetObj;
@@ -21,7 +21,8 @@ public class TouchSenser : MonoBehaviour
         demoHit = ToucherBox(rayPosition,Vector3.down * rayRange,raysize);
         if(demoHit != null){
         Debug.Log(demoHit.name);
-        }
+        valid = true;
+        }else valid = false;
      }
 
     Transform ToucherBox(Transform target,Vector3 Vec,float size){
