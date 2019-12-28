@@ -1,30 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class TouchSenser : MonoBehaviour
+public class StacklyJumpDemo : Stack
 {
-    //接触の状況を確認するメソッド
-    
-    //これが接地しているかの真理値
-
-    //　レイを伸ばして接地判定に用いる
-    public Transform rayPosition;
+    public float jumppow = 10.0f;
     public float rayRange = 1.0f; 
+    public float raysize = 1.0f;
     private Transform demoHit;
     private float distanceFromTargetObj;
-    public float raysize;
-    private RaycastHit hit;
 
-    bool valid;
-    void Update()
+    private RaycastHit hit;
+    public override Vector3 Action() {
+        return Vector3.up * jumppow ;
+    }
+
+
+    public override bool Sencer(Transform position)
     {
-        demoHit = ToucherBox(rayPosition,Vector3.down * rayRange,raysize);
+        demoHit = ToucherBox(position,Vector3.down * rayRange,raysize);
         if(demoHit != null){
         Debug.Log(demoHit.name);
-        valid = true;
-        }else valid = false;
+        return true;
+        }else return false;
      }
 
     Transform ToucherBox(Transform target,Vector3 Vec,float size){
@@ -46,12 +44,11 @@ public class TouchSenser : MonoBehaviour
     }
 
     void OnDrawGizmos() 
-    {
+    {       
         //レイを疑似的に視覚化
-        if(valid){
-        Gizmos.color = Color.green;
-        }else Gizmos.color = Color.red;
+        Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position +((Vector3.down) * distanceFromTargetObj) - Vector3.down*(raysize), Vector3.one * raysize);
     }
 
 }
+

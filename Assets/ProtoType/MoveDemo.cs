@@ -18,20 +18,20 @@ public class MoveDemo : MonoBehaviour
     Vector3 KeyVectorCheck()
     {
         direction = Vector3.zero;
-         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space))
+         if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.Space))
         {
             //direction += Vector3.up;
         }
 
-        if (Input.GetKey(KeyCode.S)){
+        if (Input.GetKey(KeyCode.DownArrow)){
             //direction += Vector3.up * (-1.0f);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             direction += Vector3.right;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             direction += Vector3.right * (-1.0f);
         }
