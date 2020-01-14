@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class EnemyDemo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // プロトタイプなので雑だよ
+    void OnCollisionStay(Collision col)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("あたった");
+        if(col.gameObject.name == "Demoplayer" && !Input.GetKey(KeyCode.N)){
+            Destroy(this.gameObject,0.1f);
+        }
     }
 }

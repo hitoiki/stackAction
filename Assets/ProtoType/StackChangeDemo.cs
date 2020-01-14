@@ -8,11 +8,13 @@ public class StackChangeDemo : MonoBehaviour
     private Stack itemStack;
 
     public Rigidbody playerRb;
+
+    public bool incyan;
     void OnCollisionEnter(Collision col){
         itemStack = col.gameObject.GetComponent<Stack>();
         Debug.Log(itemStack);
         if(itemStack != null){
-
+            
             if(itemStack != stacks[stacks.Count-1]){
             itemStack.rb = playerRb;
             stacks.Add(itemStack);
@@ -20,14 +22,14 @@ public class StackChangeDemo : MonoBehaviour
             }
         }
     }
+
     
     void FixedUpdate(){
-        if(Input.GetKey(KeyCode.Z)){
+        if(Input.GetKey(KeyCode.Z)||Input.GetKey(KeyCode.W)){
             stacks[stacks.Count-1].Boot();
-
         }
         if(Input.GetKey(KeyCode.X)){
-            
+
         }
     }
 }
