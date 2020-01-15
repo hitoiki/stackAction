@@ -8,8 +8,7 @@ public class StackChangeDemo : MonoBehaviour
     private Stack itemStack;
 
     public Rigidbody playerRb;
-
-    public bool incyan;
+    
     void OnCollisionEnter(Collision col){
         itemStack = col.gameObject.GetComponent<Stack>();
         Debug.Log(itemStack);

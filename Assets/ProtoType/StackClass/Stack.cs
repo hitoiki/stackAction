@@ -19,8 +19,6 @@ public abstract class Stack : MonoBehaviour
     public abstract Vector3 Action();
     public Rigidbody rb{get;set;}
 
-    public bool stackcyan;
-
     public void Boot(){
         if(Sencer(rb.transform)){
             rb.velocity += Action();
